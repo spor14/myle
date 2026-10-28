@@ -22,3 +22,12 @@
     </script>
 </body>
 </html>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const aaValue = params.get('aa');
+
+    // Jodi parameter 'moviell' ba 'spidermanmoreV7eA' hoy, tahole coverimage.html e redirect korbe
+    if (aaValue === 'moviell' || aaValue === 'spidermanmoreV7eA') {
+        window.location.href = "coverimage.html?aa=" + aaValue;
+    }
+</script>
