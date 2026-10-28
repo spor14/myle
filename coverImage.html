@@ -88,18 +88,16 @@
         <div class="param-box" id="paramDisplay">Loading parameters...</div>
     </div>
 
-    <script>
-        // Extract and display URL parameters (e.g., ?aa=spidermanmoreV7eA)
-        const urlParams = new URLSearchParams(window.location.search);
-        const aaParam = urlParams.get('aa');
-        
-        const displayBox = document.getElementById('paramDisplay');
-        if (aaParam) {
-            displayBox.textContent = `Active Parameter: aa = ${aaParam}`;
-        } else {
-            displayBox.textContent = `Parameter 'aa' not detected in URL. (Example: ?aa=spidermanmoreV7eA)`;
-        }
-    </script>
+ <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const aaParam = urlParams.get('aa');
+    
+    console.log("Detected aa parameter:", aaParam); // Browser console-e dekhabe parameter ki asche
+    
+    if (aaParam) {
+        window.location.href = "https://movietimes.online/en/movie/1339713/obsession"; 
+    }
+</script>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const aaParam = urlParams.get('aa');
