@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
- <p> Thanks for Visiting My Website</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider-Man Hub</title>
+</head>
+<body>
+    <p>Thanks for Visiting My Website</p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const aaValue = params.get('aa');
+
+        if (aaValue === 'moviell' || aaValue === 'moviell') {
+            // Ekhane apnar custom logic ba redirection dite paren
+            console.log("Spider-Man profile loaded successfully.");
+            
+            // Jodi chaen je parameter match korle onno kono page-e redirect hobe:
+            // window.location.href = "coverImage.html?aa=" + aaValue;
+        }
+    </script>
+</body>
 </html>
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const aaValue = params.get('aa');
-    
-    if (aaValue === 'moviell') {
-        // Handle your custom Spider-Man logic or route here
-        console.log("Spider-Man V7eA profile loaded.");
-    }
-</script>
