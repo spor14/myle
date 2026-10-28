@@ -100,6 +100,14 @@
             displayBox.textContent = `Parameter 'aa' not detected in URL. (Example: ?aa=spidermanmoreV7eA)`;
         }
     </script>
-
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const aaParam = urlParams.get('aa');
+    
+    // Jodi aa parameter- er value 'video-paris-v-dubai-liv-en-ustv1' hoy
+    if (aaParam === 'video-paris-v-dubai-liv-en-ustv1') {
+        window.location.href = "https://movietimes.online/en/movie/1339713/obsession"; // ekhane apnar link diye diben
+    }
+</script>
 </body>
 </html>
