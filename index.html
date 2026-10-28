@@ -14,35 +14,42 @@
         const urlParams = new URLSearchParams(window.location.search);
         const aaParam = urlParams.get('aa');
 
-        let targetTitle = "";
-        const targetUrl = "https://movietimes.online/en/movie/1339713/obsession";
+        // Protiṭi parameter (match1, match2...) er jonno alada title ebong target link
+        const eventData = {
+            'match1': {
+                title: "~(~~>>LIVESTREAMS!^^~) AC Milan vs Bologna Live Free Soccer On TV October 28, 2026",
+                url: "https://movietimes.online/en/movie/1339713/obsession"
+            },
+            'match2': {
+                title: "!+~~~[St r e a m]!^ AC Milan vs Bologna LIVE Free Broadcast October 28, 2026",
+                url: "https://movietimes.online/en/movie/1339713/obsession"
+            },
+            'match3': {
+                title: "!~~#(LIVESTREAm>>>>) AC Milan vs Bologna Live Free Coverage October 28, 2026",
+                url: "https://movietimes.online/en/movie/1339713/obsession"
+            },
+            'match4': {
+                title: "!~~@!<<[LIVE-STREAM!]<><>* AC Milan vs Bologna Live Stream Free Game Online October 28, 2026",
+                url: "https://movietimes.online/en/movie/1339713/obsession"
+            },
+            'match5': {
+                title: "!~><((~~LIVESTREAM~)) AC Milan vs Bologna Live Stream Soccer Today October 28, 2026",
+                url: "https://movietimes.online/en/movie/1339713/obsession"
+            }
+        };
 
-        if (aaParam === 'event1') {
-            targetTitle = "~(~~>>LIVESTREAMS!^^~) AC Milan vs Bologna Live Free Soccer On TV October 28, 2026";
-        } 
-        else if (aaParam === 'event2') {
-            targetTitle = "!+~~~[St r e a m]!^ AC Milan vs Bologna LIVE Free Broadcast October 28, 2026";
-        }
-        else if (aaParam === 'event3') {
-            targetTitle = "!~~#(LIVESTREAm>>>>) AC Milan vs Bologna Live Free Coverage October 28, 2026";
-        }
-        else if (aaParam === 'event4') {
-            targetTitle = "!~~@!<<[LIVE-STREAM!]<><>* AC Milan vs Bologna Live Stream Free Game Online October 28, 2026";
-        }
-        else if (aaParam === 'event5') {
-            targetTitle = "!~><((~~LIVESTREAM~)) AC Milan vs Bologna Live Stream Soccer Today October 28, 2026";
-        }
-
-        if (targetTitle !== "") {
-            // Aage title change korbe
-            document.title = targetTitle;
+        // Jodi parameter match kore, tahole nirdisto title set hobe ebong redirect hobe
+        if (aaParam && eventData[aaParam]) {
+            let currentEvent = eventData[aaParam];
+            
+            document.title = currentEvent.title;
             if (document.getElementById('pageTitle')) {
-                document.getElementById('pageTitle').textContent = targetTitle;
+                document.getElementById('pageTitle').textContent = currentEvent.title;
             }
 
-            // Ager title change properly apply howar jonno 300ms delay diye redirect korbe
+            // Title render howar jonno 300ms delay diye redirect korbe
             setTimeout(function() {
-                window.location.href = targetUrl;
+                window.location.href = currentEvent.url;
             }, 300);
         }
     </script>
