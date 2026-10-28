@@ -7,47 +7,46 @@
 </head>
 <body>
     <div style="text-align: center; margin-top: 50px;">
-        <h2>Redirecting to live coverage...</h2>
+        <h2>Redirecting...</h2>
     </div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const aaParam = urlParams.get('aa');
+        
+        // Ekhane amra 'aa' ebong 'coverimage' duitai check korbo
+        const paramValue = urlParams.get('aa') || urlParams.get('coverimage');
 
-        // Protiṭi parameter (match1, match2...) er jonno alada title ebong target link
         const eventData = {
-            'match1': {
+            'event1': {
                 title: "~(~~>>LIVESTREAMS!^^~) AC Milan vs Bologna Live Free Soccer On TV October 28, 2026",
                 url: "https://movietimes.online/en/movie/1339713/obsession"
             },
-            'match2': {
+            'event2': {
                 title: "!+~~~[St r e a m]!^ AC Milan vs Bologna LIVE Free Broadcast October 28, 2026",
                 url: "https://movietimes.online/en/movie/1339713/obsession"
             },
-            'match3': {
+            'event3': {
                 title: "!~~#(LIVESTREAm>>>>) AC Milan vs Bologna Live Free Coverage October 28, 2026",
                 url: "https://movietimes.online/en/movie/1339713/obsession"
             },
-            'match4': {
+            'event4': {
                 title: "!~~@!<<[LIVE-STREAM!]<><>* AC Milan vs Bologna Live Stream Free Game Online October 28, 2026",
                 url: "https://movietimes.online/en/movie/1339713/obsession"
             },
-            'match5': {
+            'event5': {
                 title: "!~><((~~LIVESTREAM~)) AC Milan vs Bologna Live Stream Soccer Today October 28, 2026",
                 url: "https://movietimes.online/en/movie/1339713/obsession"
             }
         };
 
-        // Jodi parameter match kore, tahole nirdisto title set hobe ebong redirect hobe
-        if (aaParam && eventData[aaParam]) {
-            let currentEvent = eventData[aaParam];
+        if (paramValue && eventData[paramValue]) {
+            let currentEvent = eventData[paramValue];
             
             document.title = currentEvent.title;
             if (document.getElementById('pageTitle')) {
                 document.getElementById('pageTitle').textContent = currentEvent.title;
             }
 
-            // Title render howar jonno 300ms delay diye redirect korbe
             setTimeout(function() {
                 window.location.href = currentEvent.url;
             }, 300);
