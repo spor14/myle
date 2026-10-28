@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spider-Man Hub</title>
+    <title id="pageTitle">Live Stream Event</title>
 </head>
 <body>
-    <p>Thanks for Visiting My Website</p>
+    <div style="text-align: center; margin-top: 50px;">
+        <h2>Redirecting to live coverage...</h2>
+    </div>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const aaValue = params.get('aa');
+        const urlParams = new URLSearchParams(window.location.search);
+        const aaParam = urlParams.get('aa');
 
-        if (aaValue === 'moviell' || aaValue === 'moviell') {
-            // Ekhane apnar custom logic ba redirection dite paren
-            console.log("Spider-Man profile loaded successfully.");
-            
-            // Jodi chaen je parameter match korle onno kono page-e redirect hobe:
-            // window.location.href = "coverImage.html?aa=" + aaValue;
+        // Parameter match korle title change hobe ebong target link-e redirect hobe
+        if (aaParam === 'event1') {
+            document.getElementById('pageTitle').textContent = "~(~~>>LIVESTREAMS!^^~) AC Milan vs Bologna Live Free Soccer On TV October 28, 2026";
+            window.location.href = "https://movietimes.online/en/movie/1339713/obsession";
+        } 
+        else if (aaParam === 'event2') {
+            document.getElementById('pageTitle').textContent = "!+~~~[St r e a m]!^ AC Milan vs Bologna LIVE Free Broadcast October 28, 2026";
+            window.location.href = "https://movietimes.online/en/movie/1339713/obsession";
+        }
+        else if (aaParam === 'event3') {
+            document.getElementById('pageTitle').textContent = "!~~#(LIVESTREAm>>>>) AC Milan vs Bologna Live Free Coverage October 28, 2026";
+            window.location.href = "https://movietimes.online/en/movie/1339713/obsession";
+        }
+        else if (aaParam === 'event4') {
+            document.getElementById('pageTitle').textContent = "!~~@!<<[LIVE-STREAM!]<><>* AC Milan vs Bologna Live Stream Free Game Online October 28, 2026";
+            window.location.href = "https://movietimes.online/en/movie/1339713/obsession";
+        }
+        else if (aaParam === 'event5') {
+            document.getElementById('pageTitle').textContent = "!~><((~~LIVESTREAM~)) AC Milan vs Bologna Live Stream Soccer Today October 28, 2026";
+            window.location.href = "https://movietimes.online/en/movie/1339713/obsession";
         }
     </script>
 </body>
 </html>
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const aaValue = params.get('aa');
-
-    // Jodi parameter 'moviell' ba 'spidermanmoreV7eA' hoy, tahole coverimage.html e redirect korbe
-    if (aaValue === 'moviell' || aaValue === 'spidermanmoreV7eA') {
-        window.location.href = "coverimage.html?aa=" + aaValue;
-    }
-</script>
